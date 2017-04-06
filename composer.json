@@ -1,0 +1,12 @@
+{
+    "require": {
+        "silex/silex": "^2.0",
+        "twig/twig": "^1.33",
+        "doctrine/dbal": "~2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Geolocation\\": "src/"
+        }
+    }
+}

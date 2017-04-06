@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function($) {
+            $('button').on('click', function (event) {
+                $.ajax({
+                    "url": '/ip',
+                    "type": "POST"
+                }).done(function(data) {
+                    $('ul li:first span').html(data.city);
+                    $('ul li:last span').html(data.country);
+                    $('ul').show();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Geolocation</h1>
+    <h3>Your IP: {{ ip }}</h3>
+    <button>Get geo location</button>
+    <ul style="display:none;">
+        <li>City: <span></span></li>
+        <li>Country: <span></span></li>
+    </ul>
+</body>
+</html>
